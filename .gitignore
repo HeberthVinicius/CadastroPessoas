@@ -1,0 +1,12 @@
+.vscode
+.sonarqube
+.sonarlint
+*.v2
+*.vsidx
+*.suo
+*.dll
+obj
+obj/Debug
+obj/Debug/net8.0
+.vs
+bin

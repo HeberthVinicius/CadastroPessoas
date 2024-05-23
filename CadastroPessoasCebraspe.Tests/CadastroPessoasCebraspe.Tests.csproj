@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Castle.Core" Version="5.1.1" />
+    <PackageReference Include="Moq" Version="4.20.70" />
+    <PackageReference Include="xUnit" Version="2.8.0" />
+    <PackageReference Include="xUnit.runner.visualstudio" Version="2.8.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <!-- Referência para o projeto principal -->
+    <ProjectReference Include="..\CadastroPessoasCebraspe\CadastroPessoasCebraspe.csproj" />
+  </ItemGroup>
+</Project>

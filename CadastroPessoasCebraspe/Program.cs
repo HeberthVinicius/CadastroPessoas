@@ -7,7 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddTransient<IPessoaRepository, PessoaRepository>();
-builder.Services.AddTransient<RelatorioService>();
+builder.Services.AddTransient<IPessoaService, PessoaService>();
+builder.Services.AddTransient<IRelatorioService, RelatorioService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen( c => 
 {
@@ -29,7 +30,7 @@ app.UseHttpsRedirection();
 
 app.UseRouting();
 
-//app.UseAuthorization();
+app.UseAuthorization();
 
 app.MapControllers();
 

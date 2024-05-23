@@ -1,28 +1,24 @@
 using System;
-using System.Data;
-using Moq;
-using Dapper;
-using Xunit;
+using System.Collections.Generic;
 using CadastroPessoasCebraspe.Model;
 using CadastroPessoasCebraspe.Repositories;
-using CadastroPessoasCebraspe.Utils;
+using NSubstitute;
+using Xunit;
 using Microsoft.Extensions.Configuration;
-using System.Collections.Generic;
 
 namespace CadastroPessoasCebraspe.Tests.Repositories
 {
     public class PessoaRepositoryTests
     {
-        private readonly Mock<IDbConnection> _mockDbConnection;
+        private readonly IConfiguration _mockConfiguration;
         private readonly PessoaRepository _pessoaRepository;
 
         public PessoaRepositoryTests()
         {
-            _mockDbConnection = new Mock<IDbConnection>();
-            _pessoaRepository = new PessoaRepository(new ConfigurationBuilder().AddInMemoryCollection(new Dictionary<string, string>
-            {
-                {"ConnectionStrings:DefaultConnection", "YourConnectionStringHere"}
-            }).Build());
+            _mockConfiguration = Substitute.For<IConfiguration>();
+            _mockConfiguration.GetConnectionString("DefaultConnection").Returns("YourConnectionStringHere");
+
+            _pessoaRepository = new PessoaRepository(_mockConfiguration);
         }
 
         [Fact]

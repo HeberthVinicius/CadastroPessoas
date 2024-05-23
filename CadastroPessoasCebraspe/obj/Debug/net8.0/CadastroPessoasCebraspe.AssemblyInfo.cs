@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CadastroPessoasCebraspe")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2f437ec6378485efa74327fb1374868d7178e1c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3ef305d75afb39f3b6639d1df6803f6ad3b0fe6")]
 [assembly: System.Reflection.AssemblyProductAttribute("CadastroPessoasCebraspe")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CadastroPessoasCebraspe")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

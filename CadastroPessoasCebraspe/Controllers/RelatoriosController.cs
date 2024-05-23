@@ -9,9 +9,9 @@ namespace CadastroPessoasCebraspe.Controllers
 {
     public class RelatoriosController : ControllerBase
     {
-        private readonly RelatorioService _relatorioService;
+        private readonly IRelatorioService _relatorioService;
 
-        public RelatoriosController(RelatorioService relatorioService)
+        public RelatoriosController(IRelatorioService relatorioService)
         {
             _relatorioService = relatorioService;
         }

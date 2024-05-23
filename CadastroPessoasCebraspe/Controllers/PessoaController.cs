@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CadastroPessoasCebraspe.Dtos;
 using CadastroPessoasCebraspe.Model;
 using CadastroPessoasCebraspe.Repositories;
+using CadastroPessoasCebraspe.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CadastroPessoasCebraspe.Controllers
@@ -13,19 +14,23 @@ namespace CadastroPessoasCebraspe.Controllers
     [Route("api/[controller]")]
     public class PessoaController : ControllerBase
     {
-        private readonly IPessoaRepository _pessoaRepository;
+        private readonly IPessoaService _pessoaService;
 
-        public PessoaController(IPessoaRepository pessoaRepository){
+        public PessoaController(IPessoaService pessoaService){
 
-            _pessoaRepository = pessoaRepository;
+            _pessoaService = pessoaService;
 
         }
 
         [HttpPost]
         public IActionResult CriarPessoa([FromBody] Pessoa pessoa) {
+            
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             try
             {
-                _pessoaRepository.CriarPessoa(pessoa);
+                _pessoaService.CriarPessoa(pessoa);
                 return Ok(new { Message = "Pessoa criada com sucesso!" });
             }
             catch(ArgumentException ex)
@@ -35,16 +40,16 @@ namespace CadastroPessoasCebraspe.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetPessoa()
+        public IActionResult GetPessoas()
         {
-            var pessoa = _pessoaRepository.GetPessoas();
-            return Ok(pessoa);
+            var pessoas = _pessoaService.GetPessoas();
+            return Ok(pessoas);
         }
 
         [HttpGet("{cpf}")]
         public IActionResult GetPessoaByCPF(string cpf)
         {   
-            var pessoa = _pessoaRepository.GetPessoaByCPF(cpf);
+            var pessoa = _pessoaService.GetPessoaByCPF(cpf);
 
             if (pessoa == null)
             {
@@ -64,7 +69,7 @@ namespace CadastroPessoasCebraspe.Controllers
                     return BadRequest(ModelState);
                 }
 
-                _pessoaRepository.AtualizarPessoa(cpf, new Pessoa
+                _pessoaService.AtualizarPessoa(cpf, new Pessoa
                 {
                     Nome = pessoaDto.Nome,
                     RG = pessoaDto.RG,
@@ -90,7 +95,7 @@ namespace CadastroPessoasCebraspe.Controllers
         {  
             try
             {
-                _pessoaRepository.DeletarPessoa(cpf);
+                _pessoaService.DeletarPessoa(cpf);
                 return Ok(new {Mensagem =  "Deleção efetuada com sucesso!"});// ou nocontent
             }
             catch(ArgumentException ex)

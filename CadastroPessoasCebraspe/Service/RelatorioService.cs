@@ -7,7 +7,7 @@ using OfficeOpenXml;
 
 namespace CadastroPessoasCebraspe.Service
 {
-    public class RelatorioService
+    public class RelatorioService : IRelatorioService
     {
         private readonly IPessoaRepository _pessoasRepository;
 

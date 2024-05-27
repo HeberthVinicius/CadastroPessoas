@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CadastroPessoasCebraspe.Model;
 
-namespace CadastroPessoasCebraspe.Service
+namespace CadastroPessoasCebraspe.Services
 {
     public interface IPessoaService
     {

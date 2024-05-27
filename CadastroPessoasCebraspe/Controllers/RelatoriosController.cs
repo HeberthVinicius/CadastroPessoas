@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CadastroPessoasCebraspe.Service;
+using CadastroPessoasCebraspe.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CadastroPessoasCebraspe.Controllers

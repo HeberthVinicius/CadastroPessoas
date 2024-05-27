@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using CadastroPessoasCebraspe.Model;
 using CadastroPessoasCebraspe.Repositories;
 
-namespace CadastroPessoasCebraspe.Service
+namespace CadastroPessoasCebraspe.Services
 {
     public class PessoaService : IPessoaService
     {

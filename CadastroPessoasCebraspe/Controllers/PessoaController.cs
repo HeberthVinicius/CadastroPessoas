@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using CadastroPessoasCebraspe.Dtos;
 using CadastroPessoasCebraspe.Model;
 using CadastroPessoasCebraspe.Repositories;
-using CadastroPessoasCebraspe.Service;
+using CadastroPessoasCebraspe.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CadastroPessoasCebraspe.Controllers

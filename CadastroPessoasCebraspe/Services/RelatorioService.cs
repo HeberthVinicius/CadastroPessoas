@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using CadastroPessoasCebraspe.Repositories;
 using OfficeOpenXml;
 
-namespace CadastroPessoasCebraspe.Service
+namespace CadastroPessoasCebraspe.Services
 {
     public class RelatorioService : IRelatorioService
     {

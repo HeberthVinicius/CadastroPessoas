@@ -1,5 +1,5 @@
 using CadastroPessoasCebraspe.Repositories;
-using CadastroPessoasCebraspe.Service;
+using CadastroPessoasCebraspe.Services;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
